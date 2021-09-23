@@ -8,7 +8,7 @@ class TestSum(unittest.TestCase):
 
         try:
             assert first_n == "Spiros"
-        except AssertionError as e:
+        except AssertionError:
             raise AssertionError(f"did not match: {first_n} Spiros ")
 
     def test_first_name_multiple_times(self):
@@ -23,7 +23,7 @@ class TestSum(unittest.TestCase):
 
             try:
                 assert expected_first_name == first_result
-            except AssertionError as e:
+            except AssertionError:
                 raise AssertionError(
                     f"Expected first name:{expected_first_name} Did not match actual first-name: {first_result}"
                 )
@@ -40,7 +40,7 @@ class TestSum(unittest.TestCase):
 
             try:
                 assert expected_last_name == last_result
-            except AssertionError as e:
+            except AssertionError:
                 raise AssertionError(
                     f"Expected Last Name:{expected_last_name}  Did not match last name {last_result}"
                 )
@@ -57,7 +57,7 @@ class TestSum(unittest.TestCase):
 
             try:
                 assert expected_capitalised == last_result
-            except AssertionError as e:
+            except AssertionError:
                 raise AssertionError(
                     f"did not match:{expected_capitalised} - {last_result}"
                 )
