@@ -26,13 +26,12 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Run unit-tests
+        run: python sample_app_tests.py 
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Lint with flake8
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
-
-
+          # stop the build if there are Python syntax errors or undefined names
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+          # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
