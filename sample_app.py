@@ -7,4 +7,4 @@ def last_name(name):
 
 
 def capitalise_name(name):
-    return name.title()
+    return name.upper()
